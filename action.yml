@@ -16,6 +16,6 @@ runs:
   steps:
     - shell: bash
       run: |
-        echo '#!/bin/bash' > "${INPUT_NAME}"
-        echo "${INPUT_CONTENT}" >> "${INPUT_NAME}"
-        chmod +x "${INPUT_NAME}"
+        echo '#!/bin/bash' > "${{ inputs.name }}"
+        echo "${{ inputs.content }}" >> "${{ inputs.name }}"
+        chmod +x "${{ inputs.name }}"
