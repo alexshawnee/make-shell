@@ -11,7 +11,7 @@ inputs:
     required: true
     description: Content of shell file
     
- runs:
+runs:
   using: 'composite'
   steps:
     - env:
