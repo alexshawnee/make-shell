@@ -14,11 +14,8 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - env:
-        CONTENT: ${{ github.event.inputs.content }}
-        PATH: ${{ github.event.inputs.name }}
-      shell: bash
+    - shell: bash
       run: |
-        echo '#!/bin/bash' > "${PATH}"
-        echo "${CONTENT}" >> "${PATH}"
-        chmod +x "${PATH}"
+        echo '#!/bin/bash' > "${INPUT_NAME}"
+        echo "${INPUT_CONTENT}" >> "${INPUT_NAME}"
+        chmod +x "${INPUT_NAME}"
