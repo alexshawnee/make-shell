@@ -19,6 +19,6 @@ runs:
         PATH: ${{ github.event.inputs.name }}
       shell: bash
       run: |
-        echo "#!/bin/sh" > "${PATH}"
+        echo '#!/bin/bash' > "${PATH}"
         echo "${CONTENT}" >> "${PATH}"
         chmod +x "${PATH}"
