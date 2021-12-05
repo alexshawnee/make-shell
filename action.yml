@@ -17,6 +17,7 @@ runs:
     - env:
         CONTENT: ${{ github.event.inputs.content }}
         PATH: ${{ github.event.inputs.name }}
+      shell: bash
       run: |
         echo "#!/bin/sh" > "${PATH}"
         echo "${CONTENT}" >> "${PATH}"
