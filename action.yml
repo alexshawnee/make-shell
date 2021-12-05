@@ -1,0 +1,23 @@
+name: 'Create shell script'
+description: 'Creates a shell script from given content'
+
+inputs:
+  name:
+    type: string
+    required: true
+    description: Path and name of shell file (may omit .sh extension if you like)
+  content:
+    type: string
+    required: true
+    description: Content of shell file
+    
+ runs:
+  using: 'composite'
+  steps:
+    - env:
+        CONTENT: ${{ github.event.inputs.content }}
+        PATH: ${{ github.event.inputs.name }}
+      run: |
+        echo "#!/bin/sh" > "${PATH}"
+        echo "${CONTENT}" >> "${PATH}"
+        chmod +x "${PATH}"
