@@ -17,5 +17,5 @@ runs:
     - shell: bash
       run: |
         echo '#!/bin/bash' > "${{ inputs.name }}"
-        echo "${{ inputs.content }}" >> "${{ inputs.name }}"
+        echo '${{ inputs.content }}' >> "${{ inputs.name }}"
         chmod +x "${{ inputs.name }}"
